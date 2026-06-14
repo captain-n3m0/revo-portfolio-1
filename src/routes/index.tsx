@@ -45,22 +45,37 @@ const TESTIMONIALS = [
 
 function TopNav() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-5 flex items-center justify-between">
-      <div className="font-display text-sm tracking-[0.3em] font-bold">REVO<span style={{ color: "var(--neon)" }}>.</span></div>
-      <nav className="hidden md:flex items-center gap-8 font-mono text-[11px] tracking-[0.2em] uppercase text-white/60">
-        <a href="#shorts" className="hover:text-white transition-colors">Shorts</a>
-        <a href="#longform" className="hover:text-white transition-colors">Long-Form</a>
-        <a href="#proof" className="hover:text-white transition-colors">Proof</a>
-        <a href="#book" className="hover:text-white transition-colors">Book</a>
-      </nav>
-      <a
-        href="#book"
-        data-reticle="BOOK CALL"
-        className="hidden sm:inline-flex font-mono text-[11px] tracking-[0.2em] uppercase px-4 py-2 brand-border ease-revo transition-colors hover:bg-white hover:text-black"
-        style={{ color: "var(--neon)", borderColor: "var(--neon)" }}
-      >
-        ▸ Book a Call
-      </a>
+    <header className="fixed left-0 right-0 top-4 z-50 px-4 md:top-6">
+      <div className="apple-glass-nav mx-auto flex w-full max-w-5xl items-center justify-between gap-3 rounded-full px-4 py-2.5 sm:px-5">
+        <a
+          href="#"
+          data-reticle="HOME"
+          className="font-display text-sm font-bold tracking-[0.3em] text-white"
+        >
+          REVO<span style={{ color: "var(--neon)" }}>.</span>
+        </a>
+        <nav className="hidden items-center gap-1 rounded-full bg-white/[0.04] p-1 font-mono text-[11px] uppercase tracking-[0.2em] text-white/60 md:flex">
+          <a href="#shorts" className="apple-nav-link">
+            Shorts
+          </a>
+          <a href="#longform" className="apple-nav-link">
+            Long-Form
+          </a>
+          <a href="#proof" className="apple-nav-link">
+            Proof
+          </a>
+          <a href="#book" className="apple-nav-link">
+            Book
+          </a>
+        </nav>
+        <a
+          href="#book"
+          data-reticle="BOOK CALL"
+          className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/[0.08] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] ease-revo transition-all hover:border-white/50 hover:bg-white hover:text-black sm:text-[11px] sm:tracking-[0.2em]"
+        >
+          Book Call
+        </a>
+      </div>
     </header>
   );
 }
