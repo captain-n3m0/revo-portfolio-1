@@ -252,7 +252,7 @@ function Index() {
                 </div>
               </div>
 
-              <h1 className="neon-text whitespace-nowrap font-black leading-[0.85] text-[clamp(2.5rem,12.5vw,4.75rem)] sm:text-[clamp(4.75rem,12.5vw,8rem)] md:text-[clamp(4rem,8vw,9rem)] lg:text-[clamp(5.75rem,8.5vw,12rem)] xl:text-[clamp(7rem,9vw,12.25rem)]">
+              <h1 className="font-display whitespace-nowrap font-black leading-[0.85] text-white text-[clamp(2.5rem,12.5vw,4.75rem)] sm:text-[clamp(4.75rem,12.5vw,8rem)] md:text-[clamp(4rem,8vw,9rem)] lg:text-[clamp(5.75rem,8.5vw,12rem)] xl:text-[clamp(7rem,9vw,12.25rem)]">
                 REVO
               </h1>
 
