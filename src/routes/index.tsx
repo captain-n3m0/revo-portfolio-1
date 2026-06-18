@@ -28,9 +28,9 @@ const SHORT_CATS = [
 ];
 
 const LONGFORM = [
-  { id: "YT_LF_01", tag: "Real Estate", title: "Inside a $14M Penthouse — The Full Walkthrough", duration: "14:22", avd: "11:08", ctr: "9.4%", thumb: "linear-gradient(135deg,#1a0006,#2b000a 50%,#080808)" },
-  { id: "YT_LF_02", tag: "Informative", title: "How Algorithms Decide What You Watch Next", duration: "18:47", avd: "12:55", ctr: "11.2%", thumb: "linear-gradient(135deg,#0a0a0a,#1a0008 60%,#3b0010)" },
-  { id: "YT_LF_03", tag: "Documentary", title: "Night Shift // A City That Never Edits", duration: "22:10", avd: "16:31", ctr: "8.7%", thumb: "linear-gradient(135deg,#000,#0f0004 50%,#240008)" },
+  { id: "YT_LF_01", tag: "Real Estate", title: "Inside a $14M Penthouse — The Full Walkthrough", duration: "14:22", avd: "11:08", ctr: "9.4%", thumb: "linear-gradient(135deg,#001317,#003642 50%,#080808)" },
+  { id: "YT_LF_02", tag: "Informative", title: "How Algorithms Decide What You Watch Next", duration: "18:47", avd: "12:55", ctr: "11.2%", thumb: "linear-gradient(135deg,#0a0a0a,#002129 60%,#4a3512)" },
+  { id: "YT_LF_03", tag: "Documentary", title: "Night Shift // A City That Never Edits", duration: "22:10", avd: "16:31", ctr: "8.7%", thumb: "linear-gradient(135deg,#000,#061f24 50%,#3d2a0d)" },
 ];
 
 const TESTIMONIALS = [
@@ -45,7 +45,7 @@ const TESTIMONIALS = [
 
 function TopNav() {
   return (
-    <header className="relative z-50 px-4 pt-4 md:pt-6">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 md:py-6">
       <div className="pill-nav mx-auto flex w-full max-w-5xl items-center justify-between gap-3 rounded-full px-4 py-2.5 sm:px-5">
         <a
           href="#"
@@ -99,9 +99,10 @@ function FauxClip({ seed }: { seed: number }) {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(circle at ${20 + (seed * 13) % 60}% ${30 + (seed * 7) % 40}%, rgba(255,0,51,0.35), transparent 40%),
+            radial-gradient(circle at ${20 + (seed * 13) % 60}% ${30 + (seed * 7) % 40}%, rgba(0,229,255,0.35), transparent 40%),
+            radial-gradient(circle at ${40 + (seed * 17) % 45}% ${20 + (seed * 9) % 55}%, rgba(245,184,75,0.16), transparent 38%),
             radial-gradient(circle at ${70 - (seed * 11) % 50}% ${60 + (seed * 5) % 30}%, rgba(255,255,255,0.12), transparent 35%),
-            linear-gradient(${seed * 37}deg, #1a0006, #080808 70%)`,
+            linear-gradient(${seed * 37}deg, #001317, #080808 70%)`,
           filter: "contrast(1.1)",
           animation: `pulse-dot ${2 + (seed % 3)}s ease-in-out infinite alternate`,
         }}
@@ -127,7 +128,7 @@ function ShortCard({ item, idx }: { item: typeof SHORT_CATS[number]; idx: number
         <div
           className="absolute inset-0 ease-revo transition-all duration-700"
           style={{
-            background: `linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.85) 100%), linear-gradient(${idx * 47}deg, #0a0a0a 0%, #1a0006 100%)`,
+            background: `linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.85) 100%), linear-gradient(${idx * 47}deg, #0a0a0a 0%, #002a33 72%, #3a2a0d 100%)`,
             filter: hover ? "saturate(1) brightness(1) scale(1)" : "saturate(0) brightness(0.85)",
             transform: hover ? "scale(1.06)" : "scale(1)",
           }}
@@ -234,7 +235,7 @@ function Index() {
                 style={{ filter: "contrast(1.15) saturate(0.8)" }}
               />
               <div className="absolute inset-0" style={{
-                background: "linear-gradient(160deg, rgba(255,0,51,0.18) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.7) 100%)",
+                background: "linear-gradient(160deg, rgba(0,229,255,0.18) 0%, rgba(245,184,75,0.08) 38%, rgba(0,0,0,0.7) 100%)",
                 mixBlendMode: "multiply",
               }} />
               <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between font-mono text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.25em] uppercase">
@@ -268,7 +269,7 @@ function Index() {
               <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
                 <a href="#book" data-reticle="BOOK CALL"
                    className="inline-flex w-full sm:w-auto justify-center font-mono text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.25em] uppercase px-4 sm:px-5 py-3 ease-revo transition-all whitespace-nowrap"
-                   style={{ background: "var(--neon)", color: "#fff", boxShadow: "0 0 24px rgba(255,0,51,0.5)" }}>
+                   style={{ background: "var(--neon)", color: "#031014", boxShadow: "0 0 24px rgba(0,229,255,0.46)" }}>
                   ▸ Command the Feed
                 </a>
                 <a href="#shorts" data-reticle="VIEW WORK"
@@ -289,7 +290,7 @@ function Index() {
         {/* ============ SHORTS ARCHIVE ============ */}
         <section
           id="shorts"
-          className="relative px-6 md:px-16 py-32"
+          className="relative scroll-mt-28 px-6 md:px-16 py-32"
         >
           <RevealOnScroll>
             <SectionLabel idx="01" label="Shorts & Reels Archive" />
@@ -313,7 +314,7 @@ function Index() {
         {/* ============ LONG-FORM ============ */}
         <section
           id="longform"
-          className="relative px-6 md:px-16 py-32 border-t border-white/5"
+          className="relative scroll-mt-28 px-6 md:px-16 py-32 border-t border-white/5"
         >
           <RevealOnScroll>
             <SectionLabel idx="02" label="Long-Form YouTube Showcase" />
@@ -332,7 +333,7 @@ function Index() {
         {/* ============ TESTIMONIALS ============ */}
         <section
           id="proof"
-          className="relative py-32 border-t border-white/5 overflow-hidden"
+          className="relative scroll-mt-28 py-32 border-t border-white/5 overflow-hidden"
         >
           <div className="px-6 md:px-16">
             <RevealOnScroll>
@@ -362,7 +363,7 @@ function Index() {
         {/* ============ BOOK A CALL ============ */}
         <section
           id="book"
-          className="relative px-6 md:px-16 py-32 border-t border-white/5"
+          className="relative scroll-mt-28 px-6 md:px-16 py-32 border-t border-white/5"
         >
           <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 items-start">
             <RevealOnScroll>
@@ -405,7 +406,7 @@ function Index() {
                         className={`aspect-square font-mono text-xs ease-revo transition-all ${
                           active ? "hover:bg-white hover:text-black border border-white/20" : "text-white/20"
                         } ${today ? "" : ""}`}
-                        style={today ? { background: "var(--neon)", color: "#fff" } : undefined}
+                        style={today ? { background: "var(--neon)", color: "#031014" } : undefined}
                       >
                         {i + 1}
                       </button>
@@ -432,7 +433,7 @@ function Index() {
                   rel="noreferrer"
                   data-reticle="LOCK IN"
                   className="block w-full text-center font-mono text-[11px] tracking-[0.25em] uppercase px-5 py-4 ease-revo transition-all"
-                  style={{ background: "var(--neon)", color: "#fff", boxShadow: "0 0 32px rgba(255,0,51,0.45)" }}
+                  style={{ background: "var(--neon)", color: "#031014", boxShadow: "0 0 32px rgba(0,229,255,0.44)" }}
                 >
                   ▸ Confirm Booking
                 </a>
